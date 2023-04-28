@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "express-generator": "^4.16.1",
     "express-prometheus-middleware": "^1.2.0",
     "nodemon": "^2.0.22"
   }
