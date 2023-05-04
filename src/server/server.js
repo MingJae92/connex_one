@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 
+//Acessing promitheus API and requesting for the duration and length of metrics
 app.use(
   promMid({
     metricsPath: "/metrics",
@@ -21,6 +22,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+//Express now accessing middleware authorisation 
 app.use(function (req, _res, next) {
   if (req.headers.authorization !== "mysecrettoken") {
     next(createError(403));
@@ -28,6 +30,7 @@ app.use(function (req, _res, next) {
   next();
 });
 
+//Express accessing live server time
 app.use("/time", (res, req, next)=>{
   const serverTimeSeconds = new Date().getTime() / 1000;
   res.send({

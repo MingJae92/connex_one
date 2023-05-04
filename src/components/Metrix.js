@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
+//Fetching metrics data from prometheus API end point. 
 async function getMetrics() {
   const res = await fetch("http://localhost:3000/metrics", {
     headers: { authorization: "mysecrettoken" },
@@ -11,6 +12,8 @@ async function getMetrics() {
 }
 
 function Metrix() {
+  //Using useQuery hook to access the metrics 
+
   const { isLoading, data } = useQuery({
     queryKey: ["metrics"],
     queryFn: getMetrics,
