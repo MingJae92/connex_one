@@ -1,15 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import  Metrix from "./components/Metrix";
+import TimeDifference from "./components/TimeDifference";
 
-const App=()=> {
+function App() {
   return (
-    <div className="App">
-      <header>
-        <h1>Hello world!!!</h1>
-        <h1>Lets see some data!!!</h1>
-      </header>
+    <div>
+      <TimeDifference />
+      <Metrix />
     </div>
   );
 }
 
 export default App;
+
+
+
